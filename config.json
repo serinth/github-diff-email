@@ -1,0 +1,12 @@
+{
+    "mailConfig":{
+        "host": "SMTP SERVER",
+        "username": "USERNAME",
+        "password": "PASSWORD",
+        "from": "email@yourdomain.com",
+        "to": "email1@yourdomain.com,email2@yourdomain.com"
+    },
+    "github":{
+        "secret": "github web hook secret"
+    }
+}

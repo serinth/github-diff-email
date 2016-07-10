@@ -1,0 +1,16 @@
+{
+  "name": "github-unified-diff-emailer",
+  "version": "1.0.0",
+  "description": "Web hook for GitHub that sends unified diff emails",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tony Truong",
+  "license": "ISC",
+  "dependencies": {
+    "nodemailer": "^2.5.0",
+    "parse-diff": "^0.3.2",
+    "smtp-connection": "^2.8.0"
+  }
+}
