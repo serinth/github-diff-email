@@ -38,4 +38,5 @@ The high level overview of what you need is:
 3. Create the lambda function using the zip file you created with this code
 4. Create an IAM Execution role for the lambda function and give the API Gateway permissions to invoke this function
 5. Point the API Gateway endpoint to use this lambda function
-6. Apply pass-through mappings on the API Gateway so the lambda function can access the headers and body. Use the provided body-mapping for 'application/json' from AWS in the dropdown
+6. Apply pass-through mappings on the API Gateway so the lambda function can access the headers and body. Use the provided body-mapping for 'application/json' from AWS in the dropdown. It should look similar to this:
+![pass-through mapping api gateway](http://www.tonytruong.net/content/images/2016/07/configure_integration_endpoint_to_passthrough_everything.png)
