@@ -3,6 +3,7 @@ var crypto = require('crypto');
 var config = require('./config.json');
 var parse = require('parse-diff');
 var nodemailer = require('nodemailer');
+var escape = require('escape-html');
 
 exports.handler = (event, context, callback) => {
     
@@ -31,19 +32,19 @@ exports.handler = (event, context, callback) => {
                         chunk.changes.forEach(function(change,idx,array){
                             //Build HTML EMAIL
                             email += '<tr>';                            
-                                email += '<td style="border-right:1px solid lightgray;">';
+                                email += '<td style="border-right:1px solid lightgray; font-family: monospace, \'Courier New\', Courier; font-size: 12px; margin: 0;">';
                                 email += (change.normal) ? change.ln2 : change.ln;
                                 email += '</td>';
 
                                 if(change.add){
-                                    email += '<td style="background-color:#ddffdd;">';
+                                    email += '<td style="background-color:#ddffdd; font-family: monospace, \'Courier New\', Courier; font-size: 12px; margin: 0;">';
                                 } else if (change.del){
-                                    email += '<td style="background-color:#ffdddd;">';
+                                    email += '<td style="background-color:#ffdddd; font-family: monospace, \'Courier New\', Courier; font-size: 12px; margin: 0;">';
                                 } else if (change.normal){
-                                    email += '<td>';
+                                    email += '<td style="font-family: monospace, \'Courier New\', Courier; font-size: 12px; margin: 0;">';
                                 }                         
                                 
-                                email += change.content;
+                                email += escape(change.content);
                                 email += '</td>';
 
                             email += '</tr>';
