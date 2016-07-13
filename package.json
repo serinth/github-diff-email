@@ -11,6 +11,8 @@
   "dependencies": {
     "nodemailer": "^2.5.0",
     "parse-diff": "^0.3.2",
-    "smtp-connection": "^2.8.0"
+    "smtp-connection": "^2.8.0",
+    "escape-html": "^1.0.3"
+
   }
 }
