@@ -2,9 +2,12 @@
     "mailConfig":{
         "host": "SMTP SERVER",
         "username": "USERNAME",
-        "password": "PASSWORD",
-        "from": "email@yourdomain.com",
-        "to": "email1@yourdomain.com,email2@yourdomain.com"
+        "password": "PASSWORD",        
+        "to": "email1@yourdomain.com,email2@yourdomain.com",
+        "port": 465,
+        "secure": true,
+        "requireTLS": true,
+        "authMethod": "LOGIN"
     },
     "github":{
         "secret": "github web hook secret"
