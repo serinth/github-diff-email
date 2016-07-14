@@ -11,15 +11,22 @@ AWS Lambda currently supports up to version 4.3.2 but I've built this and packag
 - SMTP server credentials
 
 Make sure you modify the config.json:
+If you're on a secure connection already to the mail server then:
+
+ 1. Make **username** and **password** *blank*
+ 2. Check to see if you're using port 25 (the default for non secure channel)
 
 ```javascript
 {
     "mailConfig":{
         "host": "SMTP SERVER",
         "username": "USERNAME",
-        "password": "PASSWORD",
-        "from": "email@yourdomain.com",
-        "to": "email1@yourdomain.com,email2@yourdomain.com"
+        "password": "PASSWORD",        
+        "to": "email1@yourdomain.com,email2@yourdomain.com",
+        "port": 465,
+        "secure": true,
+        "requireTLS": true,
+        "authMethod": "LOGIN"
     },
     "github":{
         "secret": "github web hook secret"
@@ -28,7 +35,6 @@ Make sure you modify the config.json:
 
 ```
 
-The code uses Secure SMTP connections to send emails on port 465.
 
 # Overview of How to Deploy
 The high level overview of what you need is:
