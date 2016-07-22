@@ -3,6 +3,9 @@ A webhook for GitHub's push events to provide a unified diff in an email. Create
 
 For some additional information on some settings in AWS head over here: [http://www.tonytruong.net/getting-github-unified-diff-emails-using-aws-lambda-and-api-gateway/](http://www.tonytruong.net/getting-github-unified-diff-emails-using-aws-lambda-and-api-gateway/)
 
+Serverless version here which will do all the heavy lifting for deployment:
+[https://github.com/serinth/serverless-github-diff-emailer](https://github.com/serinth/serverless-github-diff-emailer)
+
 # Requirements:
 AWS Lambda currently supports up to version 4.3.2 but I've built this and packaged it on 5.7+ so that should be fine.
 - API Gateway full access
