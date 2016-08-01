@@ -9,8 +9,10 @@
   "author": "Tony Truong",
   "license": "MIT",
   "dependencies": {
+    "async": "^2.0.1",
     "diff-parse": "0.0.13",
     "escape-html": "^1.0.3",
-    "nodemailer": "^2.5.0"
+    "nodemailer": "^2.5.0",
+    "smtp-connection": "^2.10.0"
   }
 }
