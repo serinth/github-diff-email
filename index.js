@@ -74,7 +74,6 @@ exports.handler = (event, context, callback) => {
                     commit_msg+='</table><br/>';
 
                 };
-                //console.log('commit_msg: ' + commit_msg);
                 email += commit_msg;
                 callback();
             })
@@ -84,12 +83,9 @@ exports.handler = (event, context, callback) => {
             });
         }, function(err) {
             if (err) return next(err);
-            //console.log('Final email: ' + email);
-            //console.log('sender.url: ' + event['body-json'].sender.url);
 
             getSenderNameFromGitHub(event['body-json'].sender.url)
             .then((name)=>{
-                //console.log('Sender name: ' + name);
                 var subject = '[' + event['body-json'].repository.full_name + '] ' + name + ' has pushed changes - ' + event['body-json'].head_commit.message.substring(0,60) + '...';
                 var from = name + '<' + event['body-json'].pusher.email + '>';                
                 email += '</body></html>';
